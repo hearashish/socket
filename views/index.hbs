@@ -1,2 +1,31 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+{{errMsg}}
+<form class="form-horizontal" action="validate-login" method="post">
+  <fieldset>
+    <legend>Login</legend>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="inputEmail" placeholder="Email" name="userEmail">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+      <div class="col-lg-10">
+        <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="userPassword">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Remember me
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="reset" class="btn btn-default">Cancel</button>
+        <button type="submit" class="btn btn-primary" name="btnSubmit">Submit</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
