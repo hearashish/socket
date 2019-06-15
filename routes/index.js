@@ -15,6 +15,8 @@ router.get('/', function(req, res, next) {
             // cannot access session here
         })
         res.render('index', { title: 'Website','errMsg':msg });
+    } else if (req.session.email){
+        res.redirect('/users/dashboard');
     } else {
         res.render('index', { title: 'Website' });
     }
@@ -28,20 +30,24 @@ router.get('/home', function(req, res, next) {
 
 router.post('/validate-login', function(req, res, next) {
     connection.dbconnect(function(db){
-        console.log(req.body);
-        db.collection('users').find({name:req.body.userEmail,pass:req.body.userPassword}).toArray(function (err, k) {
-            if (err) throw err
-            else
-                if (k.length==0)
-                {
-                    console.log(k);
-                    //res.send('Invalid Username or Password');
-                    req.session.msg = 'Invalid Username or Password';
-                    res.redirect('/');
-                } else {
-                    res.send(k);
-                }
-        })
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(req.body.userEmail)){
+            db.collection('users').find({email:req.body.userEmail,pass:req.body.userPassword}).toArray(function (err, k) {
+                if (err) throw err
+                else
+                    if (k.length==0)
+                    {
+                        console.log(k);
+                        req.session.msg = 'Invalid Username or Password';
+                        res.redirect('/');
+                    } else {
+                        req.session.email = req.body.userEmail;
+                        res.redirect('/users/dashboard');
+                    }
+            })
+        } else {
+            req.session.msg = 'Invalid Email Address';
+            res.redirect('/');
+        }
     });
 });
 

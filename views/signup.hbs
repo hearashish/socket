@@ -1,39 +1,35 @@
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row">
         <div class="well bs-component w-50">
-            <form class="form-horizontal" action="validate-login" method="post">
-                {{errMsg}}
+            <form class="form-horizontal" action="signup" method="post">
                 <fieldset>
-                    <legend>Login</legend>
+                    <legend>Signup</legend>
+                    <div class="form-group">
+                      <label for="displayName" class="col-lg-2 control-label">Name</label>
+                      <div class="col-lg-10">
+                        <input type="text" class="form-control" id="displayName" placeholder="Name" name="displayName">
+                      </div>
+                    </div>
                     <div class="form-group">
                       <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-                      <div class="col-12">
+                      <div class="col-lg-10">
                         <input type="text" class="form-control" id="inputEmail" placeholder="Email" name="userEmail">
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-                      <div class="col-12">
+                      <div class="col-lg-10">
                         <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="userPassword">
                       </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-6">
-                            <div class="checkbox">
-                              <label><input type="checkbox"> Remember me</label>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                          <label><a href="users/signup">Sign Up</a></label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="col-12 col-lg-offset-2">
+                      <div class="col-lg-10 col-lg-offset-2">
                         <button type="reset" class="btn btn-default">Cancel</button>
-                        <button type="submit" class="btn btn-primary" name="btnSubmit">Login</button>
+                        <button type="submit" class="btn btn-primary" name="btnSubmit">Submit</button>
                       </div>
                     </div>
                 </fieldset>
+                <legend><a href="/">Login</a></legend>
             </form>
         </div>
     </div>

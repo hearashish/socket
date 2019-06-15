@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
-	<link rel='stylesheet' href='/stylesheets/style.css' />
-	<link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
-	<script src="/javascripts/jquery.min.js"></script>
-	<script src="/javascripts/bootstrap.min.js"></script>
-	<title>{{title}}</title>
-  </head>
-  <body>
-  	<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+	<head>
+		<title>{{title}}</title>
+		<link rel='stylesheet' href='/stylesheets/style.css' />
+		<link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+		<script src="/javascripts/jquery.min.js"></script>
+		<script src="/javascripts/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
       <div class="container">
         <a href="../" class="navbar-brand">{{title}}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,26 +31,25 @@
               <a class="nav-link" href="#">Blog</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="download" aria-expanded="false">Simplex <span class="caret"></span></a>
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="download" aria-expanded="false">Posts <span class="caret"></span></a>
               <div class="dropdown-menu" aria-labelledby="download">
+                <a class="dropdown-item" href="#">All Posts</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="new-post">New Post</a>
+                <a class="dropdown-item" href="#" >Menu</a>
+                <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Menu</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" download="">Menu</a>
-                <a class="dropdown-item" href="#" download="">Menu</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" download="">Menu</a>
               </div>
             </li>
           </ul>
-
           <ul class="nav navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">Menu</a>
+              <a class="nav-link" href="logout">Logout</a>
             </li>
           </ul>
         </div>
       </div>
     </div>
-	{{{body}}}
-  </body>
+		{{{body}}}
+	</body>
 </html>
